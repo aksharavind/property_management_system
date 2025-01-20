@@ -1,4 +1,7 @@
 package com.example.pmsproject.repository;
 
-public interface TenantRepository {
+import com.example.pmsproject.entity.Tenant;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TenantRepository extends JpaRepository<Tenant,Long> {
 }

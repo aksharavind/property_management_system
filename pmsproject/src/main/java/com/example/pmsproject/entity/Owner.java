@@ -1,21 +1,33 @@
 package com.example.pmsproject.entity;
 
-
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "owner")
 public class Owner {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Column(name = "owner_id")
     private Long ownerId;
-    private String username;
-    private String name;
-    private String email;
-    private String address;
-    private String password;
+
+    @Column(name = "owner_username", nullable = false, unique = true)
+    private String ownerUsername;
+
+    @Column(name = "owner_name", nullable = false)
+    private String ownerName;
+
+    @Column(name = "owner_email", nullable = false, unique = true)
+    private String ownerEmail;
+
+    @Column(name = "owner_phoneno", nullable = false, unique = true)
+    private String ownerPhoneno;
+
+    @Column(name = "owner_address", nullable = false)
+    private String ownerAddress;
+
+    @Column(name = "owner_password", nullable = false)
+    private String ownerPassword;
 
     // Getters and Setters
     public Long getOwnerId() {
@@ -26,42 +38,51 @@ public class Owner {
         this.ownerId = ownerId;
     }
 
-    public String getName() {
-        return name;
+    public String getOwnerUsername() {
+        return ownerUsername;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getUsername() {
-        return username;
+    public void setOwnerUsername(String ownerUsername) {
+        this.ownerUsername = ownerUsername;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public String getEmail() {
-        return email;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getOwnerEmail() {
+        return ownerEmail;
     }
 
-    public String getAddress() {
-        return address;
+    public void setOwnerEmail(String ownerEmail) {
+        this.ownerEmail = ownerEmail;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public String getOwnerAddress() {
+        return ownerAddress;
     }
 
-    public String getPassword() {
-        return password;
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getOwnerPassword() {
+        return ownerPassword;
+    }
+
+    public void setOwnerPassword(String ownerPassword) {
+        this.ownerPassword = ownerPassword;
+    }
+
+    public String getOwnerPhoneno() {
+        return ownerPhoneno;
+    }
+
+    public void setOwnerPhoneno(String ownerPhoneno) {
+        this.ownerPhoneno = ownerPhoneno;
     }
 }

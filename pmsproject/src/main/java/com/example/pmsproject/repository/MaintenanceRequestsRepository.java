@@ -1,4 +1,7 @@
 package com.example.pmsproject.repository;
 
-public interface MaintenanceRequestsRepository {
+import com.example.pmsproject.entity.MaintenanceRequests;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MaintenanceRequestsRepository  extends JpaRepository<MaintenanceRequests,Long > {
 }
