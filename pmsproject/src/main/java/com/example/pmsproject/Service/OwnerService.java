@@ -23,7 +23,7 @@ public class OwnerService {
  }
   public void deleteOwner(Long ownerId)
   {
-      ownerRepository.deleteById(ownerId);s
+      ownerRepository.deleteById(ownerId);
   }
   public  Owner updateOwner(Owner owner)
   {
