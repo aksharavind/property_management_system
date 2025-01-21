@@ -16,6 +16,7 @@ public class OwnerController {
 
     @PostMapping
     public Owner createOwner(@RequestBody Owner owner) {
+
         return ownerService.createOwner(owner);
     }
 
