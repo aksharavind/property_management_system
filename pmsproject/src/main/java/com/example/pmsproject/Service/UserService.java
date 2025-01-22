@@ -1,7 +1,8 @@
 package com.example.pmsproject.Service;
 
-import com.example.Auth.model.User;
-import com.example.Auth.repository.UserRepository;
+
+import com.example.pmsproject.entity.User;
+import com.example.pmsproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

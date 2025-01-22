@@ -1,6 +1,7 @@
 package com.example.pmsproject.Controller;
-import com.example.Auth.model.User;
-import com.example.Auth.service.UserService;
+
+import com.example.pmsproject.entity.User;
+import com.example.pmsproject.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
