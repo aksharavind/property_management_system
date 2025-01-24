@@ -1,8 +1,8 @@
 package com.example.pmsproject.Service;
 
-
-import com.example.pmsproject.entity.User;
 import com.example.pmsproject.repository.UserRepository;
+import com.example.pmsproject.entity.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,15 +12,16 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User signup(User user) {
-        return userRepository.save(user);
+    public boolean registerUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()) != null) {
+            return false; // User already exists
+        }
+        userRepository.save(user);
+        return true;
     }
 
-    public User login(String username, String password) {
+    public boolean authenticateUser(String username, String password) {
         User user = userRepository.findByUsername(username);
-        if (user != null && user.getPassword().equals(password)) {
-            return user; // You can return more user details here if needed
-        }
-        return null; // Invalid credentials
+        return user != null && user.getPassword().equals(password);
     }
 }
